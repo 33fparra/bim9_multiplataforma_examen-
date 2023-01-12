@@ -1,0 +1,79 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+  <ion-title>Nuevo Movimiento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <img src="../assets/img/mov.png">
+  </ion-item>
+  <ion-item>
+     <ion-label position="floating">NOMBRE CLIENTE</ion-label>
+    <ion-input type="text"[(ngModel)]="model.NOMBRE_CLI"></ion-input>
+  </ion-item>
+  <ion-item>
+       <ion-label position="floating">RUN CLIENTE</ion-label>
+       <ion-input type="number"[(ngModel)]="model.RUN_CL"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">NOMBRE DESTINATARIO</ion-label>
+   <ion-input type="text"[(ngModel)]="model.NOMBRE_DESTINATARIO"></ion-input>
+ </ion-item>
+ <ion-item>
+      <ion-label position="floating">RUN DESTINATARIO</ion-label>
+      <ion-input type="number"[(ngModel)]="model.RUN_DES"></ion-input>
+ </ion-item>
+  <ion-item>
+    <ion-label position="floating"> NUMERO DE CUENTA</ion-label>
+    <ion-input type="text"[(ngModel)]="model.NO_CUENTA"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">MONTO</ion-label>
+   <ion-input type="text"[(ngModel)]="model.MONTO"></ion-input>
+ </ion-item>
+ <ion-item>
+      <ion-label position="floating">SALDO</ion-label>
+      <ion-input type="number"[(ngModel)]="model.SALDO"></ion-input>
+ </ion-item>
+  <ion-button expand="full"(click)="agregarMovimiento()">Ingresar</ion-button>
+  <ion-title position="center">
+       
+     </ion-title>
+     <h1>Lista Movimientos</h1>
+     <ion-list>
+      <ion-item *ngFor="let registro of movimiento">
+         <ion-label>
+           <h2>Nombre Cliente</h2>
+           <p>{{registro.NOMBRE_CLI}}</p>
+           <h2>RUN Cliente</h2>
+           <p>{{registro.RUN_CL}}</p>
+           <h2>N° de Cuenta</h2>
+           <p>{{registro.NO_CUENTA}}</p>
+            <h2>Nombre Destinatario</h2>
+           <p>{{registro.NOMBRE_DESTINATARIO}}</p>
+           <h2>RUN Destinatario</h2>
+           <p>{{registro.RUN_DES}}</p>
+           <h2>Monto a Transferir</h2>
+           <p>{{registro.MONTO}}</p>
+           <h2>Saldo</h2>
+           <p>{{registro.SALDO}}</p>
+         </ion-label>
+      </ion-item>
+    </ion-list>
+</ion-content>
+
+
+
+<!--ID_MOV:e.ID_MOV,
+          NO_CUENTA:e.NO_CUENTA,
+          NOMBRE_CLI:e.NOMBRE_CLI,
+          RUN_CL:e.RUN_CL,
+          NOMBRE_DESTINATARIO:e.NOMBRE_DESTINATARIO,
+          RUN_DES:e.RUN_DES,
+          MONTO:e.MONTO,
+          SALDO:e.SALDO-->

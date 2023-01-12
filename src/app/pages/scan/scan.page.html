@@ -1,0 +1,26 @@
+<ion-header no-border>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Scan
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="back" defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+     <!--<ion-buttons slot="end">
+     <ion-back-button defaultHref="/menu" text=" " icon="close-circle-outline">
+      </ion-back-button>
+    </ion-buttons>-->
+  </ion-toolbar>
+</ion-header>
+<ion-content color="dark">
+  <ion-slide>
+    <ion-button expand="full"
+                fill="outline"
+                size="large"
+                shape="round"
+                color="primary"
+                (click)="scan()">
+          Escanear Codigo
+    </ion-button>
+  </ion-slide>
+</ion-content>

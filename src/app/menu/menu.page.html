@@ -1,0 +1,87 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="presionarMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Bienvenida</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-menu side="start" menuId="menu" contentId="main">
+
+    <ion-header>
+      <ion-toolbar>
+        <ion-title color="primary">Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+
+      <ion-list>
+        <ion-item routerLink="/navscan">
+          <ion-icon name="scan" slot="start"></ion-icon>
+          <ion-label>Scan</ion-label>
+        </ion-item>
+        <ion-item routerLink="/cliente">
+          <ion-icon name="person" slot="start">e</ion-icon>
+          <ion-label>Agregar Cliente</ion-label>
+        </ion-item>
+        <ion-item routerLink="/transacciones">
+          <ion-icon name="add-circle" slot="start"></ion-icon>
+          <ion-label>Nuevo Movimiento</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-content> 
+  <h1 id="a">Has ingresado Correctamente!</h1>  
+    <div>
+      <ion-item>
+        <img src="../assets/img/transferencia.png">
+      </ion-item>
+    </div><br>
+    <h1 id="a">Saldo Actual por cliente</h1>
+    <ion-list>
+      <ion-item *ngFor="let registro of movimiento"> <!--verificar-->
+         <ion-label>
+          <p>Cliente: {{registro.NOMBRE_CLI}}</p>
+          <p>Número de cuenta: {{registro.NO_CUENTA}}</p>
+           <p>Saldo: {{registro.SALDO}}</p>
+         </ion-label>
+      </ion-item>
+    </ion-list>
+    <h1 id="a">Lista de Transacciones</h1>
+    <ion-list>
+     <ion-item *ngFor="let registro of movimiento"> <!--verificar-->
+        <ion-label>
+          <h2>Nombre Destinatario</h2>
+          <p>{{registro.NOMBRE_DESTINATARIO}}</p>
+          <h2>Run Destinatario</h2>
+          <p>{{registro.RUN_DES}}</p>
+          <h2>Monto a Transferir</h2>
+          <p>{{registro.MONTO}}</p>
+        </ion-label>
+     </ion-item>
+   </ion-list>
+  <div>
+    <ion-button expand="full" color="danger" routerLink="/">Cerrar Sesión</ion-button>
+  </div>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-content>
+</ion-content>
+
+<!--ID_MOV:e.ID_MOV,
+          NO_CUENTA:e.NO_CUENTA,
+          NOMBRE_CLI:e.NOMBRE_CLI,
+          RUN_CL:e.RUN_CL,
+          NOMBRE_DESTINATARIO:e.NOMBRE_DESTINATARIO,
+          RUN_DES:e.RUN_DES,
+          MONTO:e.MONTO,
+          SALDO:e.SALDO-->

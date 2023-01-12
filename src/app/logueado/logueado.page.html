@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      
+      <ion-menu-button menu="menu"></ion-menu-button>
+      <ion-button [routerLink]="['/home']" routerLinkActive="router-link-active">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Bienvenido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <app-menu></app-menu>
+   
+  <h3>{{registro.NOMBRE_USUARIO}} Has ingresado Correctamente!</h3>
+
+    <h3>Saldo</h3><br>
+    <h3>registro.SALDO</h3><br>
+      <h1>Lista de Transacciones</h1>
+    <ion-list>
+     <ion-item *ngFor="let registro of transaccion">
+        <ion-label>
+          <h2>Monto</h2>
+          <p>{{registro.MONTO}}</p>
+          <h2>N° de Cuenta</h2>
+          <p>{{registro.N_CUENTA}}</p>
+           <h2>Nombre Destinatario</h2>
+          <p>{{registro.NOMBRE_DESTINATARIO}}</p>
+          <h2>Saldo</h2>
+          <p>{{registro.SALDO}}</p>
+        </ion-label>
+     </ion-item>
+   </ion-list>
+  <div>
+    <ion-button expand="full" color="danger" routerLink="/">Cerrar Sesión</ion-button>
+  </div>
+  <div>
+    <ion-button expand="full" color="danger" routerLink="/">Cerrar Sesión</ion-button>
+  </div>
+</ion-content>

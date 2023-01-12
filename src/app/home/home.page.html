@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Bienvenido
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+  <ion-card-header collapse="condense">
+    <ion-toolbar>
+      <ion-title color="primary" size="large">RETAIL OFF</ion-title>
+    </ion-toolbar>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div>
+      <img src="../assets/img/bienvenida.png">
+    </div><br>
+      <div><h1><strong>Login</strong></h1></div>
+      <div><ion-button expand="full" routerLink="/login">Inicia Sesión</ion-button></div>
+      <br>
+      <h2>¿No tienes cuenta?</h2><br>
+      <div><ion-button expand="full" color="warning" routerLink="/registro">Regístrate</ion-button></div>
+</ion-card-content>
+</ion-card>
+</ion-content>

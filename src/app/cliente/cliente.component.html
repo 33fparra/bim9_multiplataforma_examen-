@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+  <ion-title>Ingresar Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  
+      <ion-item>
+        <img src="../assets/img/usuario.png">
+      </ion-item>
+  
+  <ion-item>
+     <ion-label position="floating">DIRECCION</ion-label>
+    <ion-input type="text"[(ngModel)]="model.DIRECCION"></ion-input>
+  </ion-item>
+  <ion-item>
+       <ion-label position="floating">RUN</ion-label>
+       <ion-input type="number"[(ngModel)]="model.RUN"></ion-input>
+     </ion-item>
+  <ion-item>
+    <ion-label position="floating"> NOMBRE CLIENTE</ion-label>
+    <ion-input type="text"[(ngModel)]="model.NOMBRE_CLIENTE"></ion-input>
+  </ion-item>
+  <ion-button expand="full"(click)="agregarCliente()">Ingresar</ion-button>
+  <ion-title position="center">
+       
+     </ion-title>
+     <h1>Lista de Clientes</h1>
+   <ion-list>
+    <ion-item *ngFor="let registro of cliente">
+       <ion-label>
+         <h2>Dirección</h2>
+         <p>{{registro.DIRECCION}}</p>
+         <h2>Run</h2>
+         <p>{{registro.RUN}}</p>
+          <h2>Nombre Cliente</h2>
+         <p>{{registro.NOMBRE_CLIENTE}}</p>
+       </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+

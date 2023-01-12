@@ -1,0 +1,7 @@
+{
+  "name": "ExamenFinal-pipe",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
